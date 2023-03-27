@@ -2,14 +2,14 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <title>PHP/MySQL Database Connection Test</title>
+    <title>PHP-MySQL Database Connection Test</title>
     <meta>
     <meta>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body class="m-2">
-  <h1>PHP/MySQL Database Connection Test</h1>
+  <h1>PHP-MySQL Database Connection Test</h1>
   <p class="lead">Developed by James Henderson (10/08/2017)</p>
 
   <?php
@@ -29,23 +29,26 @@
   $result = mysqli_query($conn, $test_query);
 
   if ($result) {
-    echo "<table class='table table-striped table-sm w-50'>";
+    echo "<p class='alert alert-success'>Success! You are connected to <strong>$dbname</strong>.</p>";
+    echo "<table class='table table-striped table-sm'>";
+    echo "<tr><th>Table No.</th><th>Table Name</th></tr>";
     $tblCnt = 0;
     while($tbl = mysqli_fetch_array($result)) {
       $tblCnt++;
-      echo "<tr><td>$tblCnt</td><td>$tbl[0]</td></tr>";
+      echo "<tr><td class='w-25'>$tblCnt</td><td>$tbl[0]</td></tr>";
     }
     echo "</table>";
 
     if (!$tblCnt) {
-      echo "<br>No tables exist in the <strong>$dbname</strong> database.<br>\n";
+      echo "No tables exist in the <strong>$dbname</strong> database.<br>\n";
     } else {
-      echo "<br>There are currently $tblCnt tables in the <strong>$dbname</strong> database.<br>\n";
+      echo "Showing all $tblCnt tables in this database.<br>\n";
     }
   }
   else {
-    echo "Sorry, the <strong>$dbname</strong> database could not be found.";
+    echo "<p class='alert alert-danger'>Sorry, the <strong>$dbname</strong> database could not be found.</p>";
   }
+
   ?>
 
 </body>
