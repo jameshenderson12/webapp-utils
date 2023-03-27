@@ -38,9 +38,9 @@
     echo "</table>";
 
     if (!$tblCnt) {
-      echo "<br />No tables exist in the <strong>$dbname</strong> database.<br />\n";
+      echo "<br>No tables exist in the <strong>$dbname</strong> database.<br>\n";
     } else {
-      echo "<br />There are currently $tblCnt tables in the <strong>$dbname</strong> database.<br />\n";
+      echo "<br>There are currently $tblCnt tables in the <strong>$dbname</strong> database.<br>\n";
     }
   }
   else {
