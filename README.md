@@ -1,2 +1,2 @@
 # Web App Utilities
-## This is a repo for holding anything useful related to 
+### A repo for holding useful files/functions related to the development of web applications.
