@@ -8,10 +8,10 @@
 
 function loadPage(pageURL) {
   // Simple function to load/reload a page with a specified URL
-	window.location.href = pageURL;
+  window.location.href = pageURL;
 }
 
 function containsWhitespace(str) {
-// Simple function to return 'true' if string contains space or 'false' otherwise
+  // Simple function to return 'true' if string contains space or 'false' otherwise
   return /\s/.test(str);
 }
